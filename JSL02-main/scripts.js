@@ -20,6 +20,20 @@ function initializeTaskSystem() {
         
         tasks.push({ title, description, status });
     }
+
+    console.log("--- Task System Summary ---");
+
+    const completedTasks = tasks.filter(task => task.status === "done");
+
+    if (completedTasks.length > 0) {
+        
+        completedTasks.forEach(task => {
+            console.log(`${task.title}, STATUS : ${task.status.toUpperCase()}.`);
+        });
+    } else {
+        console.log("No tasks completed. Let's get to work!");
+    }
+
 }
 
 initializeTaskSystem();
